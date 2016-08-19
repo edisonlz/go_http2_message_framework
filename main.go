@@ -92,7 +92,7 @@ type tcpKeepAliveListener struct {
     *net.TCPListener
 }
 
-/* 设置heartbeats 解决掉网问题 */
+/* 设置heartbeats 解决掉网,没有发Fin包，等问题 */
 
 func (ln tcpKeepAliveListener) Accept() (c net.Conn, err error) {
     tc, err := ln.AcceptTCP()
